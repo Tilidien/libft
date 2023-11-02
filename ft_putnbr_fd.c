@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:01:55 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/10/31 17:36:54 by tgmelin          ###   ########.fr       */
+/*   Updated: 2023/11/02 23:45:09 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,29 @@
 /// @param _fd file descriptor to write to
 void	ft_putnbr_fd(int _n, int _fd)
 {
-	char	*strnbr;
+	long long	n;
+	int			divisor;
 
-	strnbr = ft_itoa(_n);
-	if (!strnbr)
+	if (_n == 0)
+	{
+		ft_putchar_fd('0', _fd);
 		return ;
-	ft_putstr_fd(strnbr, _fd);
-	free(strnbr);
+	}
+	divisor = 1;
+	n = _n;
+	if (n < 0)
+	{
+		ft_putchar_fd('-', _fd);
+		n *= -1;
+	}
+	while (n / divisor >= 10)
+	{
+		divisor *= 10;
+	}
+	while (divisor > 0)
+	{
+		ft_putchar_fd(n / divisor + '0', _fd);
+		n %= divisor;
+		divisor /= 10;
+	}
 }

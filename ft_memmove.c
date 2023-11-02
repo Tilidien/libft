@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 20:43:25 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/11/01 17:20:50 by tgmelin          ###   ########.fr       */
+/*   Updated: 2023/11/02 23:12:17 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *_dst, const void *_src, size_t _size)
 	unsigned char	*dst;
 	unsigned char	*src;
 
+	if (!_dst && !_src)
+		return (NULL);
 	src = (unsigned char *)_src;
 	dst = (unsigned char *)_dst;
 	if (src > dst)

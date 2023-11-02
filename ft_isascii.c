@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:44:10 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/11/02 21:04:50 by tgmelin          ###   ########.fr       */
+/*   Updated: 2023/11/02 23:25:30 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isascii(int _arg)
 {
-	return ((unsigned char)_arg <= 127);
+	return (_arg <= 127 && _arg >= 0);
 }

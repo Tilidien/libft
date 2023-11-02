@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:44:20 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/10/30 18:43:00 by tgmelin          ###   ########.fr       */
+/*   Updated: 2023/11/02 23:26:51 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isprint(int _arg)
 {
-	return ((unsigned char)_arg >= 32 && (unsigned char)_arg <= 126);
+	return (_arg >= 32 && _arg <= 126);
 }
