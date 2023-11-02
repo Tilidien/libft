@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/24 17:44:20 by tgmelin           #+#    #+#             */
+/*   Updated: 2023/10/30 18:43:00 by tgmelin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isprint( int arg )
+int	ft_isprint(int _arg)
 {
-    return ( unsigned char )arg >= 20 && ( unsigned char )arg <= 127;
+	return ((unsigned char)_arg >= 32 && (unsigned char)_arg <= 126);
 }
