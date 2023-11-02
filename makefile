@@ -25,6 +25,3 @@ re: fclean all
 
 bonus: $(DEPS) $(OBJ_BONUS)
 	ar rcs $(NAME) $(OBJ_BONUS)
-
-testmain: all main.c
-	gcc $(CFLAGS) -o test main.c -L. -lft
