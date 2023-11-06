@@ -6,11 +6,23 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:43:51 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/11/01 18:57:07 by tgmelin          ###   ########.fr       */
+/*   Updated: 2023/11/07 00:27:11 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	ft_isspace(int _c)
+{
+	return (
+		(unsigned char)_c == '\t'
+		|| (unsigned char)_c == ' '
+		|| (unsigned char)_c == '\r'
+		|| (unsigned char)_c == '\n'
+		|| (unsigned char)_c == '\v'
+		|| (unsigned char)_c == '\f'
+	);
+}
 
 typedef struct s_atoi_vars
 {

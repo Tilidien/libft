@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/11/01 19:05:31 by tgmelin          ###   ########.fr       */
+/*   Updated: 2023/11/07 00:29:02 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		ft_isalpha(int _arg);
 int		ft_isascii(int _arg);
 int		ft_isdigit(int _arg);
 int		ft_isprint(int _arg);
-char	ft_isspace(int _c);
 char	*ft_itoa(int _n);
 void	ft_lstadd_back(t_list **_lst, t_list *_new);
 void	ft_lstadd_front(t_list **_lst, t_list *_new);
