@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:44:47 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/11/09 19:30:30 by tgmelin          ###   ########.fr       */
+/*   Updated: 2023/11/09 20:01:06 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstmap(t_list *_lst, void *(*_f)(void *), void (*_del)(void *))
 	t_list	*new_elem;
 	void	*new_content;
 
+	if (!_lst || !_f || !_del)
+		return (NULL);
 	out = 0;
 	while (_lst)
 	{
@@ -31,8 +33,7 @@ t_list	*ft_lstmap(t_list *_lst, void *(*_f)(void *), void (*_del)(void *))
 		if (!new_elem)
 		{
 			ft_lstclear(&out, _del);
-			_del(new_content);
-			return (NULL);
+			return (_del(new_content), NULL);
 		}
 		ft_lstadd_back(&out, new_elem);
 		_lst = _lst->next;
