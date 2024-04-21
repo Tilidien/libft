@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/04/21 15:09:11 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/04/21 15:52:27 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ typedef struct s_putnbr_base_vars
 	size_t	num;
 }	t_putnbr_base_vars;
 
+int		dpf_putnbr_base(int _fd, ssize_t _num, char *_base);
+int		dpf_putchr(int _fd, char _c);
+int		dpf_putptr(int _fd, void *_ptr);
+int		dpf_putstr(int _fd, char *_str);
+int		ft_dprintf(int _fd, const char *_format, ...);
 int		pf_putnbr_base( ssize_t _num, char *_base);
 int		pf_putchr(char _c);
 int		pf_putptr(void *_ptr);
