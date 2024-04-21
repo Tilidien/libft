@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/11/07 00:29:02 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/04/21 15:09:11 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h> //va_start, va_end, va_arg, va_list
+
+typedef char	t_bool;
 
 typedef struct s_list
 {
@@ -21,6 +24,26 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct s_printf_vars
+{
+	va_list	args;
+	int		i;
+	int		sum;
+	char	err;
+}	t_printf_vars;
+
+typedef struct s_putnbr_base_vars
+{
+	int		baselen;
+	int		out;
+	size_t	num;
+}	t_putnbr_base_vars;
+
+int		pf_putnbr_base( ssize_t _num, char *_base);
+int		pf_putchr(char _c);
+int		pf_putptr(void *_ptr);
+int		pf_putstr(char *_str);
+int		ft_printf(const char *_format, ...);
 int		ft_atoi(const char *_str );
 void	ft_bzero(void *_ptr, size_t _size);
 void	*ft_calloc(size_t _size, size_t _count);
@@ -65,5 +88,7 @@ char	*ft_strtrim(const char *_s1, const char *_set);
 char	*ft_substr(const char *_s, unsigned int _start, size_t _len);
 int		ft_tolower(int _c);
 int		ft_toupper(int _c);
+t_bool	ft_iswhitespace(char c);
+void	ft_freeptrarr(char **_arr);
 
 #endif
