@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils copy.c                             :+:      :+:    :+:   */
+/*   ft_dprintf_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:33:58 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/04/21 15:56:13 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/04/21 15:58:01 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	dpf_putptr(int _fd, void *_ptr)
 
 	if (write (_fd, "0x", 2) == -1)
 		return (-1);
-	out = pf_putunbr_base(_fd, (size_t)_ptr, "0123456789abcdef");
+	out = dpf_putunbr_base(_fd, (size_t)_ptr, "0123456789abcdef");
 	if (out == -1)
 		return (-1);
 	return (2 + out);
