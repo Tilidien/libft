@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/04/21 15:52:27 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/04/22 19:52:08 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ typedef struct s_putnbr_base_vars
 	int		out;
 	size_t	num;
 }	t_putnbr_base_vars;
+
+typedef struct s_split_vars
+{
+	size_t			wordcount;
+	size_t			charcount;
+	char			**out;
+	unsigned char	delim;
+	unsigned int	i;
+	unsigned int	j;
+	char			*outstr;
+}	t_split_vars;
 
 int		dpf_putnbr_base(int _fd, ssize_t _num, char *_base);
 int		dpf_putchr(int _fd, char _c);

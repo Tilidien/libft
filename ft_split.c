@@ -6,24 +6,13 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:37 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/04/14 15:17:36 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/04/22 19:55:09 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-typedef struct s_v
-{
-	size_t			wordcount;
-	size_t			charcount;
-	char			**out;
-	unsigned char	delim;
-	unsigned int	i;
-	unsigned int	j;
-	char			*outstr;
-}	t_v;
-
-static size_t	sslen(t_v *vars, const char *str)
+static size_t	sslen(t_split_vars *vars, const char *str)
 {
 	size_t	i;
 
@@ -33,7 +22,7 @@ static size_t	sslen(t_v *vars, const char *str)
 	return (i);
 }
 
-static char	ft_split_count_and_init(t_v *vars, const char *str)
+static char	ft_split_count_and_init(t_split_vars *vars, const char *str)
 {
 	while (str[vars->i])
 	{
@@ -51,7 +40,7 @@ static char	ft_split_count_and_init(t_v *vars, const char *str)
 	return (!!vars->out);
 }
 
-static char	**ft_split_err(t_v *vars)
+static char	**ft_split_err(t_split_vars *vars)
 {
 	vars->i = 0;
 	while (vars->out[vars->i])
@@ -62,9 +51,9 @@ static char	**ft_split_err(t_v *vars)
 
 char	**ft_split(const char *_s, char _c)
 {
-	t_v	vars;
+	t_split_vars	vars;
 
-	ft_bzero(&vars, sizeof(t_v));
+	ft_bzero(&vars, sizeof(t_split_vars));
 	vars.delim = (unsigned char)_c;
 	if (!ft_split_count_and_init(&vars, _s))
 		return (NULL);
