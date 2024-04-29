@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/04/22 19:52:08 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/04/24 22:36:26 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdarg.h> //va_start, va_end, va_arg, va_list
 
 typedef char	t_bool;
+
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_list
 {
