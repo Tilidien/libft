@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/04/24 22:36:26 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/09/16 20:45:29 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h> //va_start, va_end, va_arg, va_list
+# include <stdbool.h>
 
-typedef char	t_bool;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif //BUFFER_SIZE
 
-# define TRUE 1
-# define FALSE 0
+# define MAX_FILE_DESCRIPTORS 1024
 
 typedef struct s_list
 {
@@ -52,6 +54,22 @@ typedef struct s_split_vars
 	unsigned int	j;
 	char			*outstr;
 }	t_split_vars;
+
+typedef struct s_gnl_buffer
+{
+	char	buffer[MAX_FILE_DESCRIPTORS][BUFFER_SIZE];
+	ssize_t	len[MAX_FILE_DESCRIPTORS];
+}	t_gnl_buffer;
+
+typedef struct s_gnl_vars
+{
+	char	*out;
+	ssize_t	out_size;
+	ssize_t	endl;
+	ssize_t	bytes_read;
+	ssize_t	bytes_newly_read;
+	char	init;
+}	t_gnl_vars;
 
 int		dpf_putnbr_base(int _fd, ssize_t _num, char *_base);
 int		dpf_putchr(int _fd, char _c);
@@ -107,7 +125,9 @@ char	*ft_strtrim(const char *_s1, const char *_set);
 char	*ft_substr(const char *_s, unsigned int _start, size_t _len);
 int		ft_tolower(int _c);
 int		ft_toupper(int _c);
-t_bool	ft_iswhitespace(char c);
+bool	ft_iswhitespace(char c);
 void	ft_freeptrarr(char **_arr);
+void	ft_memclr(char *_mem, size_t _size);
+
 
 #endif

@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
+/*   ft_memclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 19:25:57 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/09/16 20:42:45 by tgmelin          ###   ########.fr       */
+/*   Created: 2024/09/16 20:19:04 by tgmelin           #+#    #+#             */
+/*   Updated: 2024/09/16 20:19:19 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_iswhitespace(char c)
+void	ft_memclr(char *_mem, size_t _size)
 {
-	return (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\r' || c == '\f' || c == '\v');
+	while (_size)
+	{
+		*_mem++ = 0;
+		_size--;
+	}
 }

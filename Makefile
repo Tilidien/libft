@@ -6,7 +6,7 @@
 #    By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:12:52 by tgmelin           #+#    #+#              #
-#    Updated: 2024/04/29 15:34:59 by tgmelin          ###   ########.fr        #
+#    Updated: 2024/09/16 20:45:13 by tgmelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 ft_iswhitespace.c ft_freeptrarr.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 ft_lstmap.c ft_printf.c ft_printf_utils.c ft_dprintf_utils.c \
-ft_dprintf.c
+ft_dprintf.c get_next_line.c ft_memclr.c
 
 OBJ = $(SRC:.c=.o)
 
