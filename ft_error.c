@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgmelin < tgmelin@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:23:57 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/10/02 12:23:57 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/10/03 14:34:00 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_error(t_ft_err_data *_data, const char *_msg, int _rtrn)
 		return ;
 	write(2, _msg, ft_strlen(_msg));
 	err_function(allocated_data);
-	exit(1);
+	exit(_rtrn);
 }
