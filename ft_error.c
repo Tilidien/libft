@@ -23,6 +23,8 @@ void	ft_error(t_ft_err_data *_data, const char *_msg, int _rtrn)
 		err_function = _data->teardown_func;
 		return ;
 	}
+	if (!allocated_data)
+		return ;
 	write(2, _msg, ft_strlen(_msg));
 	err_function(allocated_data);
 	exit(1);
