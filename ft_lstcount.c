@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 17:44:52 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/10/11 01:18:51 by tgmelin          ###   ########.fr       */
+/*   Created: 2024/10/11 01:28:41 by tgmelin           #+#    #+#             */
+/*   Updated: 2024/10/11 01:30:24 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *_content)
+int	ft_lstcount(t_list **_lst)
 {
-	t_list	*out;
+	t_list	*current;
+	int		out;
 
-	out = (t_list *)malloc(sizeof(t_list));
-	if (! out)
+	out = 0;
+	current = *_lst;
+	while (current)
 	{
-		return (NULL);
+		current = current->next;
+		out++;
 	}
-	out->content = _content;
-	out->next = NULL;
-	return (out);
-}
-
-t_list	*ft_slstnew(void *_content)
-{
-	t_list	*out;
-
-	out = (t_list *)malloc(sizeof(t_list));
-	if (! out)
-		return (free(_content), NULL);
-	out->content = _content;
-	out->next = NULL;
 	return (out);
 }
