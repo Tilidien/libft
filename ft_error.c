@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:23:57 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/10/03 14:34:00 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/10/12 18:30:04 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	ft_error(t_ft_err_data *_data, const char *_msg, int _rtrn)
 	}
 	if (!allocated_data)
 		return ;
-	write(2, _msg, ft_strlen(_msg));
+	if (_msg)
+		write(2, _msg, ft_strlen(_msg));
 	err_function(allocated_data);
 	exit(_rtrn);
 }
