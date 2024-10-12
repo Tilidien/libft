@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:44:24 by tgmelin           #+#    #+#             */
-/*   Updated: 2023/10/30 16:56:18 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/10/12 17:11:05 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	ft_lstadd_back(t_list **_lst, t_list *_new)
 	{
 		*_lst = _new;
 	}
+	_new->next = NULL;
 }
