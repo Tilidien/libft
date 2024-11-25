@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/11/23 16:06:30 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/11/25 18:35:04 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ t_list	*ft_slstnew(void *_content);
 t_list	*ft_lstpop(t_list **_lst);
 int		ft_lstcount(t_list **_lst);
 void	ft_memclr(char *_mem, size_t _size);
+void	ft_iffree(void *_mem);
 /**
  * ft_lstremove_where - Removes elements from a linked list based on a condition.
  * @_lst: Pointer to the head of the list.
@@ -151,5 +152,9 @@ void	ft_memclr(char *_mem, size_t _size);
 void	ft_lstremove_where(t_list **_lst, bool (*_condition)(void *),
 			void (*_del)(void *));
 char	*get_next_line(int fd);
+void	nop(int _x);
+bool	ft_isint32(char *_str);
+int		ft_countstrchr(const char *_str, int _chr);
+void	ft_strtrim_local(char *_str, const char *_set);
 
 #endif
