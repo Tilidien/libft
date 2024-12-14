@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstremovewhere.c                                :+:      :+:    :+:   */
+/*   ft_lstremove_where.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 15:39:40 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/11/23 16:07:39 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/12/14 03:42:32 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
  * @_condition: Function pointer to check if an element should be removed.
  * @_del: Function pointer to delete the content of the element.
  */
-void	ft_lstremove_where(t_list **_lst, bool (*_condition)(void *), void (*_del)(void *))
+void	ft_lstremove_where(t_list **_lst,
+	bool (*_condition)(void *), void (*_del)(void *))
 {
 	t_list	virtual_first;
 	t_list	*current;

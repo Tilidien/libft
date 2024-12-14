@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:50:22 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/11/25 18:35:04 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/12/14 03:42:10 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,14 @@ typedef struct s_ft_err_data
 	void	*alloc_data;
 	void	(*teardown_func)(void *);
 }	t_ft_err_data;
+
+typedef struct s_atoi_vars
+{
+	int		out;
+	char	sign;
+	size_t	mul;
+	int		i;
+}	t_atoi_vars;
 
 int		dpf_putnbr_base(int _fd, ssize_t _num, char *_base);
 int		dpf_putchr(int _fd, char _c );

@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:43:51 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/11/24 20:00:52 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/12/14 03:42:20 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@ static char	ft_isspace(int _c)
 		|| (unsigned char)_c == '\f'
 	);
 }
-
-typedef struct s_atoi_vars
-{
-	int		out;
-	char	sign;
-	size_t	mul;
-	int		i;
-}	t_atoi_vars;
 
 static int	ft_atoi_shortend(t_atoi_vars *_vars, const char *_str)
 {
